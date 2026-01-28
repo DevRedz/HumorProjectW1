@@ -1,3 +1,7 @@
+node_modules/
+.next/
+dist/
+/.env
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
