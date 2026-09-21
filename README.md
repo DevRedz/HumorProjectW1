@@ -10,6 +10,15 @@ Getting started
 npm install
 ```
 
+Create a `.env` file with your Supabase project URL and server-side secret key:
+
+```env
+SUPABASE_URL="https://your-project.supabase.co"
+SUPABASE_SECRET_KEY="your-secret-key"
+```
+
+The page reads all rows from the `test data` table and renders its columns automatically.
+
 2. Start development server
 
 ```bash
