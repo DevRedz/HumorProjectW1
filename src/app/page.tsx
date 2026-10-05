@@ -10,7 +10,11 @@ function formatCell(value: unknown) {
   return String(value);
 }
 
-export default async function Home() {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams?: { auth_error?: string };
+}) {
   let rows: TableRow[] = [];
   let errorMessage = "";
 
@@ -33,6 +37,11 @@ export default async function Home() {
 
   return (
     <section className="table-page">
+      {searchParams?.auth_error ? (
+        <div className="message error" role="alert">
+          Google sign-in could not be completed. Please try again.
+        </div>
+      ) : null}
       <div className="page-heading">
         <div>
           <p className="eyebrow">Supabase data view</p>

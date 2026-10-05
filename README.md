@@ -10,14 +10,22 @@ Getting started
 npm install
 ```
 
-Create a `.env` file with your Supabase project URL and server-side secret key:
+Create a `.env` file with your Supabase project URL, publishable key, and server-side secret key:
 
 ```env
-SUPABASE_URL="https://your-project.supabase.co"
+NEXT_PUBLIC_SUPABASE_URL="https://your-project.supabase.co"
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY="your-publishable-key"
 SUPABASE_SECRET_KEY="your-secret-key"
 ```
 
-The page reads all rows from the `test data` table and renders its columns automatically.
+Use the publishable (or legacy anon) key for browser authentication. Never expose the secret/service-role key in a `NEXT_PUBLIC_` variable or browser code. The home page reads all rows from the `test data` table and renders its columns automatically.
+
+Google sign-in redirects to `/auth/callback`. In Supabase Authentication → URL Configuration, allow both:
+
+- `https://your-deployed-domain/auth/callback`
+- `http://localhost:3000/auth/callback`
+
+In Google Cloud, the OAuth client's authorized redirect URI must be the callback URL shown in Supabase's Google provider settings (usually `https://<project-ref>.supabase.co/auth/v1/callback`).
 
 2. Start development server
 

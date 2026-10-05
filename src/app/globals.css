@@ -45,6 +45,41 @@ main {
   justify-content: space-between;
 }
 
+.auth-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+.signed-in-label {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.auth-button {
+  border: 1px solid var(--accent);
+  padding: 0.6rem 0.9rem;
+  background: var(--accent);
+  color: white;
+  font: inherit;
+  cursor: pointer;
+}
+
+.auth-button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.auth-error {
+  flex-basis: 100%;
+  color: #8a2e1b;
+  font-size: 0.8rem;
+  text-align: right;
+}
+
 .brand-mark {
   font-size: 1.05rem;
   font-weight: bold;
@@ -151,6 +186,8 @@ tbody tr:hover {
 
   .site-header-inner {
     padding: 1rem;
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .page-heading {
