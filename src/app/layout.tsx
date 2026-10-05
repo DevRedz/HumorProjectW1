@@ -18,7 +18,7 @@ export default async function RootLayout({
     error,
   } = await supabase.auth.getUser();
 
-  if (error) {
+  if (error && error.name !== "AuthSessionMissingError") {
     throw new Error(`Unable to verify the current user: ${error.message}`);
   }
 
